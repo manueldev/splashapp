@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Demos Dev Android</string>
+    <string name="action_settings">Configuracion</string>
+    <string name="hello_world">¡Hola mundo!</string>
+    <string name="title_activity_menu_principal">Demos Dev</string>
+    <string name="menu_hint">Desliza de izquiera a derecha para seleccionar un demo.</string>
+    <string name="title_activity_provocador_de_anr">Provocador de ANR</string>
+    <string name="title_activity_thread_para_evitar_anr">Asynctask para evitar ANR</string>
+
+</resources>
