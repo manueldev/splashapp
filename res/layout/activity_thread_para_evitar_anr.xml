@@ -10,12 +10,13 @@
     tools:context=".ThreadParaEvitarAnrActivity" >
 
     <Button
-        android:id="@+id/onClickBtnConHilos"
+        android:id="@+id/btnConHilos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
+        android:onClick="onClickBtnConHilos"
         android:text="@android:string/ok" />
 
     <ProgressBar
@@ -23,7 +24,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/onClickBtnConHilos"
+        android:layout_below="@+id/btnConHilos"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp" />
 

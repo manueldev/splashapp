@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -20,8 +23,13 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
-		
 	}
+	public void onClickBtnConHilos(View v){
+    	//instancio la tarea que se ejecutará en otro hilo
+		CargandoTask tarea = new CargandoTask(this);
+		int segundosDeLaTarea = 6;
+		tarea.execute(segundosDeLaTarea);
+    }
 	
 	/**
 	 * Tarea que carga nada, es solo un ejemplo de AsyncTask.
@@ -37,8 +45,10 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 	 * tarea.execute(parametros);
 	 * 
 	 */
-	static class CargandoTask extends AsyncTask<String, Float, Integer> {
+	static class CargandoTask extends AsyncTask<Integer, Float, Integer> {
 		WeakReference<ThreadParaEvitarAnrActivity> context;
+		private ProgressBar pbarProgreso;
+		
 		
 		public CargandoTask(ThreadParaEvitarAnrActivity activity) {
 			context = new WeakReference<ThreadParaEvitarAnrActivity>(activity);
@@ -50,12 +60,19 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 		 * No se puede interactuar con la UI desde aqui.
 		 */
 		@Override
-		protected Integer doInBackground(String... params) {
+		protected Integer doInBackground(Integer... params) {
 			while(! isCancelled() ){
 				//aca lo que hará la tarea
-				
+				long tiempoMuerto = (params[0]*1000)/10;
+				 for(int i=1; i<=10; i++) {
+		             try {
+		            	 Thread.sleep(tiempoMuerto);
+		            	 publishProgress(123f);
+					} catch (InterruptedException e) {	}
+		         }
+				 return 0;
 			}
-			return null;
+			return 0;
 		}
 		
 		/*
@@ -63,6 +80,14 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 		 * sirve para avisar el comienzo de una tarea en la UI. (loading etc)
 		 */
 		protected void onPreExecute() {
+			ThreadParaEvitarAnrActivity activity = context.get();
+			if (activity != null && !activity.isFinishing()){
+				//aqui se realiza la modificacion del UI para la preparacion
+				pbarProgreso = (ProgressBar)activity.findViewById(R.id.pbarProgresoAsync);
+		    	pbarProgreso.setMax(100);
+		    	pbarProgreso.setProgress(0);
+		    	
+			}
 			
 		}
 		
@@ -71,7 +96,8 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 		 * Se debe llamar a publishProgress(parametrosPertinentes) desde doInBackground
 		 */
 		protected void onProgressUpdate(Float... values){
-			
+			pbarProgreso.incrementProgressBy(10); 
+	         
 		}
 		/*
 		 * Se ejecuta tras terminar doInbackground
@@ -81,9 +107,10 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 			ThreadParaEvitarAnrActivity activity = context.get();
 			if (activity != null && !activity.isFinishing()){
 				//aqui se realiza la modificacion del UI para el resultado final
-				
+				Toast.makeText(activity.getApplicationContext(), "Tarea finalizada!",
+		                 Toast.LENGTH_LONG).show();
 			}
-		}
+		} 
 		
 	} 
 
