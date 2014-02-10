@@ -22,6 +22,15 @@ public class MenuPrincipalActivity extends Activity {
 		Intent anr = new Intent(getBaseContext(), ThreadParaEvitarAnrActivity.class);
 		startActivity(anr);
 	}
+	public void onClickStreamingAudioPlayerActivity(View v){
+		Intent anr = new Intent(getBaseContext(), StreamingAudioPlayer.class);
+		startActivity(anr);
+	}
+
+	public void onClickStreamingServiceActivity(View v){
+		Intent anr = new Intent(getBaseContext(), StreamingServiceActivity.class);
+		startActivity(anr);
+	}
 	
 
 	@Override

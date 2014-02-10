@@ -2,17 +2,18 @@ package com.malejandrodev.splashapp;
 
 import java.lang.ref.WeakReference;
 
-import android.os.AsyncTask;
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.os.Build;
 
 public class ThreadParaEvitarAnrActivity extends Activity {
 
@@ -49,7 +50,6 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 		WeakReference<ThreadParaEvitarAnrActivity> context;
 		private ProgressBar pbarProgreso;
 		
-		
 		public CargandoTask(ThreadParaEvitarAnrActivity activity) {
 			context = new WeakReference<ThreadParaEvitarAnrActivity>(activity);
 		}
@@ -63,8 +63,8 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 		protected Integer doInBackground(Integer... params) {
 			while(! isCancelled() ){
 				//aca lo que hará la tarea
-				long tiempoMuerto = (params[0]*1000)/10;
-				 for(int i=1; i<=10; i++) {
+				long tiempoMuerto = (params[0]*1000)/100;
+				 for(int i=1; i<=100; i++) {
 		             try {
 		            	 Thread.sleep(tiempoMuerto);
 		            	 publishProgress(123f);
@@ -83,8 +83,10 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 			ThreadParaEvitarAnrActivity activity = context.get();
 			if (activity != null && !activity.isFinishing()){
 				//aqui se realiza la modificacion del UI para la preparacion
+				Button btnCorrerTarea = (Button)activity.findViewById(R.id.btnConHilos);
+				btnCorrerTarea.setEnabled(false);
 				pbarProgreso = (ProgressBar)activity.findViewById(R.id.pbarProgresoAsync);
-		    	pbarProgreso.setMax(100);
+				pbarProgreso.setMax(100);
 		    	pbarProgreso.setProgress(0);
 		    	
 			}
@@ -96,7 +98,7 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 		 * Se debe llamar a publishProgress(parametrosPertinentes) desde doInBackground
 		 */
 		protected void onProgressUpdate(Float... values){
-			pbarProgreso.incrementProgressBy(10); 
+			pbarProgreso.incrementProgressBy(1); 
 	         
 		}
 		/*
@@ -109,6 +111,8 @@ public class ThreadParaEvitarAnrActivity extends Activity {
 				//aqui se realiza la modificacion del UI para el resultado final
 				Toast.makeText(activity.getApplicationContext(), "Tarea finalizada!",
 		                 Toast.LENGTH_LONG).show();
+				Button btnCorrerTarea = (Button)activity.findViewById(R.id.btnConHilos);
+				btnCorrerTarea.setEnabled(true);
 			}
 		} 
 		

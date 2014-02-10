@@ -8,5 +8,14 @@
     <string name="menu_hint">Desliza de izquiera a derecha para seleccionar un demo.</string>
     <string name="title_activity_provocador_de_anr">Provocador de ANR</string>
     <string name="title_activity_thread_para_evitar_anr">Asynctask para evitar ANR</string>
-
+    <string name="thread_ventajas">&#8226; Previene bloqueo del thread que maneja la GUI.\n&#8226; Mantiene views aun cuando ocurre cambio de orientación.</string>
+    <string name="thread_desventajas">&#8226; Bloquea el thread de principal bloqueando la GUI.\n&#8226; Genera alert de aplicacion que no responde.</string>
+    <string name="title_activity_streaming_audio_player">StreamingAudioPlayer Simple</string>
+    <string name="mensaje_activity_streaming_audio_player">Reproductor Streaming AAC Shoutcast usando aacdecoder-android. \nUsando Thread. \nSin Controles.</string>
+    <string name="title_activity_streaming_service">StreamingAudioPlayer Service</string>
+	<string name="radioname_activity_streaming_service">Nombre de radio</string>
+	<string name="mensaje_activity_streaming_service">Reproductor Streaming AAC Shoutcast usando aacdecoder-android. \nUsando Service. \nCon interaccion del UI Thread.</string>
+    <string name="play">Reproducir</string>
+    <string name="stop">Detener</string>
+    
 </resources>

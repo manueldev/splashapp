@@ -13,19 +13,30 @@
         android:id="@+id/btnConHilos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="30dp"
         android:onClick="onClickBtnConHilos"
         android:text="@android:string/ok" />
-
+    
     <ProgressBar
         android:id="@+id/pbarProgresoAsync"
         style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"        
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnConHilos"
+        android:layout_alignTop="@+id/btnConHilos"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/btnConHilos" />
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/styleTextoSimple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnConHilos"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp" />
+        android:layout_marginTop="20dp"
+        android:text="@string/thread_ventajas" />
 
 </RelativeLayout>

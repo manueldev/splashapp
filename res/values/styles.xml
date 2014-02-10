@@ -14,7 +14,12 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        
+	</style>
+	
+    <style name="styleTextoSimple" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:layout_marginTop">33dp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
-
 </resources>

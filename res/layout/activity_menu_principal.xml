@@ -10,6 +10,7 @@
 
     <TextView
         android:id="@+id/textView1"
+        style="@style/styleTextoSimple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="15dp"
@@ -25,6 +26,16 @@
         android:text="@string/title_activity_provocador_de_anr" />
 
     <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Button01"
+        android:layout_alignRight="@+id/Button01"
+        android:layout_below="@+id/Button01"
+        android:onClick="onClickStreamingAudioPlayerActivity"
+        android:text="@string/title_activity_streaming_audio_player" />
+
+    <Button
         android:id="@+id/Button01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,5 +43,15 @@
         android:layout_below="@+id/btnConHilos"
         android:onClick="onClickThreadParaEvitarAnrActivity"
         android:text="@string/title_activity_thread_para_evitar_anr" />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/playButton"
+        android:layout_alignRight="@+id/playButton"
+        android:layout_below="@+id/playButton"
+        android:onClick="onClickStreamingServiceActivity"
+        android:text="@string/title_activity_streaming_service" />
 
 </RelativeLayout>
