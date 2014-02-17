@@ -1,57 +1,84 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MenuPrincipalActivity" >
-
-    <TextView
-        android:id="@+id/textView1"
-        style="@style/styleTextoSimple"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="15dp"
-        android:text="@string/menu_hint" />
-
-    <Button
-        android:id="@+id/btnConHilos"
+  <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:id="@+id/scrollView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" >
+       
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:onClick="onClick_a_provocador_de_anr"
-        android:text="@string/title_activity_provocador_de_anr" />
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MenuPrincipalActivity" >
 
-    <Button
-        android:id="@+id/playButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Button01"
-        android:layout_alignRight="@+id/Button01"
-        android:layout_below="@+id/Button01"
-        android:onClick="onClickStreamingAudioPlayerActivity"
-        android:text="@string/title_activity_streaming_audio_player" />
+	    <TextView
+	        android:id="@+id/textView1"
+	        style="@style/styleTextoSimple"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:paddingBottom="15dp"
+	        android:text="@string/menu_hint" />
+	
+	    <Button
+	        android:id="@+id/btnConHilos"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/textView1"
+	        android:layout_below="@+id/textView1"
+	        android:onClick="onClick_a_provocador_de_anr"
+	        android:text="@string/title_activity_provocador_de_anr" />
+	
+	    <Button
+	        android:id="@+id/playButton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/Button01"
+	        android:layout_alignRight="@+id/Button01"
+	        android:layout_below="@+id/Button01"
+	        android:onClick="onClickStreamingAudioPlayerActivity"
+	        android:text="@string/title_activity_streaming_audio_player" />
+	
+	    <Button
+	        android:id="@+id/Button01"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/btnConHilos"
+	        android:layout_below="@+id/btnConHilos"
+	        android:onClick="onClickThreadParaEvitarAnrActivity"
+	        android:text="@string/title_activity_thread_para_evitar_anr" />
+	
+	    <Button
+	        android:id="@+id/stopButton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/playButton"
+	        android:layout_alignRight="@+id/playButton"
+	        android:layout_below="@+id/playButton"
+	        android:onClick="onClickStreamingServiceActivity"
+	        android:text="@string/title_activity_streaming_service" />
+	
+	    <Button
+	        android:id="@+id/Button02"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/stopButton"
+	        android:layout_alignRight="@+id/stopButton"
+	        android:layout_below="@+id/stopButton"
+	        android:minHeight="48dp"
+	        android:onClick="onClickStreamingServiceActivity"
+	        android:text="@string/title_activity_streaming_service" />
+	
+	    <Button
+	        android:id="@+id/button1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/Button02"
+	        android:layout_alignRight="@+id/Button02"
+	        android:layout_below="@+id/Button02"
+	        android:onClick="onClickConsumiendoServicioActivity"
+	        android:text="@string/title_activity_consumiendo_servicio" />
 
-    <Button
-        android:id="@+id/Button01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnConHilos"
-        android:layout_below="@+id/btnConHilos"
-        android:onClick="onClickThreadParaEvitarAnrActivity"
-        android:text="@string/title_activity_thread_para_evitar_anr" />
-
-    <Button
-        android:id="@+id/stopButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/playButton"
-        android:layout_alignRight="@+id/playButton"
-        android:layout_below="@+id/playButton"
-        android:onClick="onClickStreamingServiceActivity"
-        android:text="@string/title_activity_streaming_service" />
-
-</RelativeLayout>
+	</RelativeLayout>
+</ScrollView>

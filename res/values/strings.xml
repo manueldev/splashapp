@@ -13,9 +13,12 @@
     <string name="title_activity_streaming_audio_player">StreamingAudioPlayer Simple</string>
     <string name="mensaje_activity_streaming_audio_player">Reproductor Streaming AAC Shoutcast usando aacdecoder-android. \nUsando Thread. \nSin Controles.</string>
     <string name="title_activity_streaming_service">StreamingAudioPlayer Service</string>
-	<string name="radioname_activity_streaming_service">Nombre de radio</string>
-	<string name="mensaje_activity_streaming_service">Reproductor Streaming AAC Shoutcast usando aacdecoder-android. \nUsando Service. \nCon interaccion del UI Thread.</string>
+    <string name="radioname_activity_streaming_service">Nombre de radio</string>
+    <string name="mensaje_activity_streaming_service">Reproductor Streaming AAC Shoutcast usando aacdecoder-android. \nUsando Service. \nCon interaccion del UI Thread.</string>
     <string name="play">Reproducir</string>
     <string name="stop">Detener</string>
-    
+    <string name="title_activity_consumiendo_servicio">Consumiendo Servicio Activity</string>
+    <string name="obtenerFechaHora">Obtener Fecha Hora</string>
+    <string name="vacio"></string>
+
 </resources>

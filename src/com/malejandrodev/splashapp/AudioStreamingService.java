@@ -45,6 +45,7 @@ public class AudioStreamingService extends Service {
         Toast.makeText(this, "Servicio destruido", Toast.LENGTH_SHORT).show();
         destruirPlayer();
     }
+    
     private void playPlayer(String url){
     	aacPlayer.playAsync(url);
     	reproduciendo = true;
@@ -111,14 +112,18 @@ public class AudioStreamingService extends Service {
 	        Log.w( LOG, "Cannot set the ICY URLStreamHandler - maybe already set ? - " + t );
 	    }
     }
+    
     private void errorPlayer(Throwable t){
     	Log.w( LOG, "ERROR AACPLAYER " + t );
     	stopSelf(); // llama a onDestroy 
     }
+    
+    
     private void detenerPlayer(){
     	aacPlayer.stop();
     	reproduciendo = false;
     }
+   
     private void destruirPlayer(){
     	detenerPlayer();
     	aacPlayer = null;

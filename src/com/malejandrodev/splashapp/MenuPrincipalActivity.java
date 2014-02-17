@@ -32,6 +32,11 @@ public class MenuPrincipalActivity extends Activity {
 		startActivity(anr);
 	}
 	
+	public void onClickConsumiendoServicioActivity(View v){
+		Intent anr = new Intent(getBaseContext(), ConsumiendoServicioActivity.class);
+		startActivity(anr);
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
