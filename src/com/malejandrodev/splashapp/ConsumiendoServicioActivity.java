@@ -29,19 +29,20 @@ public class ConsumiendoServicioActivity extends Activity {
 	}
 	
 	@Override
-	  protected void onPause() {
+	protected void onPause() {
 	    super.onPause();
 	    unbindService(mConnection);
 	}
 	
 	public void onClickStartService(View v){
+		bindService(new Intent(this, ConsumidoService.class), mConnection, 0);
 		startService(new Intent(getBaseContext(), ConsumidoService.class));
 	}
 	public void onClickStopService(View v){
 		stopService(new Intent(getBaseContext(), ConsumidoService.class));
 	}
 	public void onClickGetFechaHora(View v){
-		TextView horafechaTx = (TextView) findViewById(R.id.fechahoraTextView);
+		TextView horafechaTx = (TextView) findViewById(R.id.textView1);
 		if (consumidoServ != null){ //se verifica que exista la instancia del servicio.
 			Log.d(LOG, "Fecha-hora desde servicio a activity: " + consumidoServ.getFechaHoraActual());
 			horafechaTx.setText(consumidoServ.getFechaHoraActual() + "");
@@ -64,7 +65,6 @@ public class ConsumiendoServicioActivity extends Activity {
 	    public void onServiceDisconnected(ComponentName className) {
 	    	consumidoServ = null;
 	    	//vuelvo a realizar el bind en espera de que se inicie el servicio nuevamente
-	    	bindService(new Intent(ConsumiendoServicioActivity.this, ConsumidoService.class), mConnection, 0);
 	    }
 	  };
 	

@@ -12,40 +12,43 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="39dp"
         android:onClick="onClickStartService"
-        android:text="Start" />
+        android:text="@string/start" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="16dp"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="26dp"
         android:onClick="onClickStopService"
-        android:text="Stop" />
+        android:text="@string/stop" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
+        android:layout_below="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="34dp"
         android:onClick="onClickGetFechaHora"
         android:text="@string/obtenerFechaHora" />
 
     <TextView
-        android:id="@+id/fechahoraTextView"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:text="@string/vacio"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_marginTop="51dp"
+        android:text="@string/vacio" />
 
 </RelativeLayout>

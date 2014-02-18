@@ -24,21 +24,20 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Button01=0x7f080008;
-        public static final int Button02=0x7f08000a;
-        public static final int action_settings=0x7f08000e;
-        public static final int btnConHilos=0x7f080006;
-        public static final int btnSinHilos=0x7f08000c;
+        public static final int Button01=0x7f080007;
+        public static final int Button02=0x7f080009;
+        public static final int action_settings=0x7f08000d;
+        public static final int btnConHilos=0x7f080005;
+        public static final int btnSinHilos=0x7f08000b;
         public static final int button1=0x7f080000;
         public static final int button2=0x7f080001;
         public static final int button3=0x7f080002;
-        public static final int fechahoraTextView=0x7f080003;
-        public static final int pbarProgreso=0x7f08000d;
-        public static final int pbarProgresoAsync=0x7f08000b;
-        public static final int playButton=0x7f080007;
+        public static final int pbarProgreso=0x7f08000c;
+        public static final int pbarProgresoAsync=0x7f08000a;
+        public static final int playButton=0x7f080006;
         public static final int scrollView1=0x7f080004;
-        public static final int stopButton=0x7f080009;
-        public static final int textView1=0x7f080005;
+        public static final int stopButton=0x7f080008;
+        public static final int textView1=0x7f080003;
     }
     public static final class layout {
         public static final int activity_consumiendo_servicio=0x7f030000;
@@ -66,6 +65,7 @@ public final class R {
         public static final int obtenerFechaHora=0x7f050011;
         public static final int play=0x7f05000e;
         public static final int radioname_activity_streaming_service=0x7f05000c;
+        public static final int start=0x7f050013;
         public static final int stop=0x7f05000f;
         public static final int thread_desventajas=0x7f050008;
         public static final int thread_ventajas=0x7f050007;

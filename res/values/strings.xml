@@ -20,5 +20,6 @@
     <string name="title_activity_consumiendo_servicio">Consumiendo Servicio Activity</string>
     <string name="obtenerFechaHora">Obtener Fecha Hora</string>
     <string name="vacio"></string>
+    <string name="start">Iniciar</string>
 
 </resources>
